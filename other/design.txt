@@ -1,0 +1,28 @@
+This software divides in ENGINE and EDITOR.
+The engine will run the game.
+The editor runs upon the engine, and it is able to change game data, the one which the engine will run.
+
+A game is composed of GAMEOBJECTS of course, and there are some types.
+- SPRITE: a simple sprite with BEHAVIOUR
+- INVISIBLE: an empty object which has only behaviour, used for example for level management or global stuff.
+- PROP: a sprite with no behaviour
+
+The game is composed of LEVELS, these levels are made of gameobjects and have some data to tweak.
+- BACKGROUND COLOR: the background's clear color
+...
+
+Levels can be loaded and unloaded, like GameObjects.
+
+To save the game's progress, there will be functions that read and write from some files, and the user just needs to specify the name of the attribute and its value to store.
+Whenever we need to retrieve it, the function will parse through the file in search of that name and will return the value.
+
+The scripting will be done in lua.
+
+Everytime the game runs an interpreter will run in C executing each function when needed.
+An API will be given to the user to use this engine's functionality.
+
+The scripts will be shipped with the final game once built.
+
+The editor capabilities mainly to change the game's data and open .lua files to edit them. You can load levels and show them in the viewport, once everything is done click build.
+
+The physics will be basic, with AABB collisions and maybe circular too.

@@ -1,0 +1,5 @@
+Engine development:
+GameObject rendering
+physics
+lua scripting
+load/unload from disk

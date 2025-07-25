@@ -1,9 +1,0 @@
-#ifndef engine_h_
-#define engine_h_
-
-void engineStart();
-void engineExit();
-
-void engineRender();
-
-#endif

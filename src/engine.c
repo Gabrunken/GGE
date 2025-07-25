@@ -1,6 +1,7 @@
 #include <engine.h>
 #include <SDL3/SDL.h>
 #include <assert.h>
+#include <gameobject.h>
 
 static char engineStarted = 0;
 static char engineEnded = 0;
@@ -39,7 +40,7 @@ static void init(void)
 	#else
 	ASSERT(SDL_Init(SDL_INIT_VIDEO));
 	#endif
-	
+
 	window = SDL_CreateWindow("Finestra", 800, 600, 0);
 	#ifdef DEBUG
 	DEBUG_ASSERT(window, SDL_GetError());
@@ -87,6 +88,8 @@ static void update(void)
 
 		//logic
 
+		//physics
+
 		//render
 		engineRender();
 	}
@@ -112,7 +115,9 @@ void engineRender(void)
 	SDL_SetRenderTarget(renderer, viewportTexture);
 	SDL_SetRenderDrawColor(renderer, 44, 122, 212, 255);
 	SDL_RenderClear(renderer);
-	
+
+	//Rendering here
+
 	#ifndef EDITOR
 	SDL_SetRenderTarget(renderer, NULL);
 	SDL_RenderTexture(renderer, viewportTexture, NULL, &windowRect);
